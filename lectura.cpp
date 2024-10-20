@@ -17,9 +17,14 @@ struct people
 int main()
 {
     people p;
+    int x;
+
+    cout << "Ingrese el Numero de Registro que desee leer: ";
+    cin >> x;
+
     fstream FILE("./archivo.bin", ios::in | ios::binary);
 
-    FILE.seekg((sizeof(people) * 0), ios::beg);
+    FILE.seekg((sizeof(people) * --x), ios::beg);
 
     cout << FILE.tellg() << endl;
 
